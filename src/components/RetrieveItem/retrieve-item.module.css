@@ -31,6 +31,7 @@
 
 .retrieve_item__content__photo {
     max-width: 400px;
+    border-right: 1px #474747 solid;
 }
 
 .retrieve_item__content__photo img {

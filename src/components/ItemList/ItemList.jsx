@@ -17,7 +17,7 @@ const ItemList = () => {
 
     return (
         <div className="main__content">
-            {data.data.map((item) => <Route path={`/items/${item.id}`}><Item item={item} key={item.id}/></Route>)}
+            {data.data.map((item) => <Link to={`/items/${item.id}`}><Item item={item} key={item.id}/></Link>)}
         </div>
     )
 }
