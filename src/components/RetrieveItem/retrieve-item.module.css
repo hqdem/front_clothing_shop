@@ -1,0 +1,131 @@
+.retrieve__item {
+    padding: 0 5%;
+}
+
+.retrieve_item__header__text {
+    display: flex;
+    align-items: center;
+}
+
+.retrieve_item__header__text a {
+    text-decoration: none;
+    color: #000;
+    display: flex;
+    align-items: center;
+}
+
+.retrieve_item__header__text span {
+    margin-left: 5px;
+}
+
+.retrieve_item__header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    align-items: center;
+}
+
+.retrieve_item__header__sign {
+    font-size: 2rem;
+}
+
+.retrieve_item__content__photo {
+    max-width: 400px;
+}
+
+.retrieve_item__content__photo img {
+    max-width: 400px;
+    height: auto;
+    object-fit: cover;
+}
+
+.retrieve_item__content {
+    margin-top: 2.5%;
+    display: flex;
+    flex: 1 1 0;
+}
+
+.retrieve_item__content__retrieve_text {
+    display: flex;
+    flex-direction: column;
+    padding-left: 5%;
+    row-gap: 5%;
+}
+
+.retrieve_text__header {
+
+}
+
+.retrieve_text__price {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #474747;
+}
+
+.retrieve_text__button {
+    background-color: #474747;
+    color: #fff;
+    padding: 2.5%;
+    max-width: 150px;
+    border-radius: 5%;
+    font-size: 1.5rem;
+    cursor: pointer;
+
+    transition: 0.3s background-color ease-in-out;
+}
+
+.retrieve_text__button:hover {
+    background-color: #5a5959
+}
+
+.retrieve_text__undertext {
+    color: #474747;
+    font-weight: 300;
+}
+
+@media screen and (max-width: 700px) {
+    .retrieve_item__content {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .retrieve_item__content__photo {
+        margin-bottom: 5%;
+        max-width: auto;
+    }
+    .retrieve_item__content__photo img {
+        max-width: auto;
+        height: auto;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .retrieve_item__content__retrieve_text {
+        display: flex;
+        flex-direction: column;
+        row-gap: 5%;
+        text-align: center;
+    }
+
+    .retrieve_text__button {
+        margin: 0 auto;
+    }
+
+    .retrieve_text__header,
+    .retrieve_text__price,
+    .retrieve_text__button,
+    .retrieve_text__undertext {
+        margin-bottom: 5%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .retrieve_item__header__text span {
+        display: none;
+    }
+
+    .retrieve_item__header__sign {
+        display: none;
+    }
+}
