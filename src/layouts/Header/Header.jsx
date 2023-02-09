@@ -18,7 +18,7 @@ const Header = () => {
             <div className="container">
                 <div className="header__content">
                     <div className="header__logo">
-                        AUTOMATIC VERTICAL
+                        <Link to="/">AUTOMATIC VERTICAL</Link>
                     </div>
 
                     <div className="header__menu">
