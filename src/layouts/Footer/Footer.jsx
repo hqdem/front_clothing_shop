@@ -1,5 +1,7 @@
 import React from 'react'
 import logo from '../../assets/img/logo.jpeg'
+import InstImage from 'remixicon-react/InstagramFillIcon'
+import TelegramImage from 'remixicon-react/TelegramFillIcon'
 
 const Footer = () => {
     return (
@@ -15,8 +17,8 @@ const Footer = () => {
                     </div>
 
                     <div className="footer__socials">
-                        <a href="#"><i className="ri-instagram-fill"></i></a>
-                        <a href="#"><i className="ri-telegram-fill"></i></a>
+                        <a href="#"><InstImage /></a>
+                        <a href="#"><TelegramImage /></a>
                     </div>
                 </div>
             </div>

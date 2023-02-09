@@ -53,7 +53,7 @@ const RetrieveItem = () => {
                             {
                                 sizes.map((sizeCount) => {
                                     return (
-                                        <div className={classes.form_radio_groupItem}>
+                                        <div key={sizeCount.size} className={classes.form_radio_groupItem}>
                                             <input
                                                 id={sizeCount.size}
                                                 type="radio"
@@ -61,7 +61,7 @@ const RetrieveItem = () => {
                                                 value={sizeCount.size}
                                                 disabled={sizeCount.item_count === 0}
                                                 checked={sizeCount.size === sizeValue}
-                                                onClick={handleRadioClick}
+                                                onChange={handleRadioClick}
                                             />
                                             <label htmlFor={sizeCount.size}>{sizeCount.size}</label>
                                         </div>
