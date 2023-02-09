@@ -28,6 +28,7 @@ const RetrieveItem = () => {
     }
 
     const sizes = data.data.sizes
+    const price = data.data.sale_price ? data.data.sale_price : data.data.price
 
 
     const handleRadioClick = (e) => {
@@ -49,29 +50,37 @@ const RetrieveItem = () => {
 
                 <div className={classes.retrieve_item__content__retrieve_text}>
                     <h1 className={classes.retrieve_text__header}>{data.data.name}</h1>
-                    <p className={classes.retrieve_text__price}>{data.data.price} ₽</p>
+                    <p className={classes.retrieve_text__price}>{price} ₽</p>
                     {/*<form className={classes.retrieve_item__form} action="">*/}
-                        <div className={classes.form_radio_group}>
-                            {
-                                sizes.map((sizeCount) => {
-                                    return (
-                                        <div key={sizeCount.size} className={classes.form_radio_groupItem}>
-                                            <input
-                                                id={sizeCount.size}
-                                                type="radio"
-                                                name="radio"
-                                                value={sizeCount.size}
-                                                disabled={sizeCount.item_count === 0}
-                                                checked={sizeCount.size === sizeValue}
-                                                onChange={handleRadioClick}
-                                            />
-                                            <label htmlFor={sizeCount.size}>{sizeCount.size}</label>
-                                        </div>
-                                    )
-                                })
-                            }
-                        </div>
-                        <button className={classes.retrieve_text__button} onClick={() => addItem({id: data.data.id, size: sizeValue, itemCount: 1})}>Купить</button>
+                    <div className={classes.form_radio_group}>
+                        {
+                            sizes.map((sizeCount) => {
+                                return (
+                                    <div key={sizeCount.size} className={classes.form_radio_groupItem}>
+                                        <input
+                                            id={sizeCount.size}
+                                            type="radio"
+                                            name="radio"
+                                            value={sizeCount.size}
+                                            disabled={sizeCount.item_count === 0}
+                                            checked={sizeCount.size === sizeValue}
+                                            onChange={handleRadioClick}
+                                        />
+                                        <label htmlFor={sizeCount.size}>{sizeCount.size}</label>
+                                    </div>
+                                )
+                            })
+                        }
+                    </div>
+                    <button className={classes.retrieve_text__button} onClick={() => addItem({
+                        id: data.data.id,
+                        name: data.data.name,
+                        size: sizeValue,
+                        itemCount: 1,
+                        price: price,
+                        image:itemImage
+                    })}>Купить
+                    </button>
                     {/*</form>*/}
                     <p className={classes.retrieve_text__undertext}>{data.data.description}</p>
                 </div>
