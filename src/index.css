@@ -80,7 +80,14 @@ body {
 
 .header__cart_icon {
   margin-right: 15%;
+
 }
+
+.header__cart_icon a {
+  color: #000;
+  text-decoration: none;
+}
+
 
 .header__cart_icon div {
   position: absolute;

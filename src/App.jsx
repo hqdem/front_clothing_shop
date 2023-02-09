@@ -5,6 +5,7 @@ import Header from "./layouts/Header/Header.jsx"
 import ItemList from "./components/ItemList/ItemList.jsx"
 import {Route, Routes} from "react-router-dom"
 import RetrieveItem from "./components/RetrieveItem/RetrieveItem.jsx"
+import Cart from "./components/Cart/Cart.jsx"
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<ItemList/>}/>
                     <Route path="/items/:id" element={<RetrieveItem />} />
+                    <Route path="/cart" element={<Cart />} />
                 </Routes>
             </Main>
             <Footer/>
