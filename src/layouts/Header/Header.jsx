@@ -2,10 +2,12 @@ import React from 'react'
 import {useState} from "react"
 import {Link} from "react-router-dom"
 import ShoppingCart from 'remixicon-react/ShoppingCart2LineIcon'
+import {useStore} from "../../store/store.js"
 
 const Header = () => {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false)
+    const cartItems = useStore(state => state.cartItems)
 
     const handleBurgerBtnClick = () => {
         setIsMenuOpen((prevValue) => !prevValue)
@@ -22,7 +24,7 @@ const Header = () => {
                     <div className="header__menu">
                         <div className="header__cart_icon">
                             {/*<i className="ri-shopping-cart-2-line"></i>*/}
-                            <ShoppingCart size="1em"/>
+                            <ShoppingCart size="1em"/> <span> {cartItems.length}</span>
                         </div>
 
                         <div className={`header__burger_menu ${isMenuOpen ? "active" : ""}`} id="burger"

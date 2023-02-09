@@ -5,11 +5,13 @@ import Loading from "../Loading/Loading.jsx"
 import defaultImage from "../../assets/img/default_image.png"
 import {useParams} from "react-router-dom"
 import classes from "./retrieve-item.module.css"
+import {useStore} from "../../store/store.js"
 
 const RetrieveItem = () => {
 
     const {id} = useParams()
     const [sizeValue, setSizeValue] = useState('')
+    const addItem = useStore(state => state.addItem)
 
     const {isLoading, isError, data, error} = useQuery({
         queryKey: ['item_retrieve', id],
@@ -69,7 +71,7 @@ const RetrieveItem = () => {
                                 })
                             }
                         </div>
-                        <button className={classes.retrieve_text__button}>Купить</button>
+                        <button className={classes.retrieve_text__button} onClick={() => addItem({id: data.data.id, size: sizeValue, itemCount: 1})}>Купить</button>
                     {/*</form>*/}
                     <p className={classes.retrieve_text__undertext}>{data.data.description}</p>
                 </div>

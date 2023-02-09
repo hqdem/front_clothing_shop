@@ -3,10 +3,9 @@ import Item from "./Item/Item.jsx"
 import Loading from "../Loading/Loading.jsx"
 import {useQuery} from "react-query"
 import {getAllItems} from "../../api/items/itemsApi.js"
-import {Link, Route, Routes} from "react-router-dom"
+import {Link} from "react-router-dom"
 
 const ItemList = () => {
-
     const {isLoading, isError, data, error} = useQuery({
         queryKey: ['items'],
         queryFn: getAllItems
