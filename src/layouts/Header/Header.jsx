@@ -24,7 +24,7 @@ const Header = () => {
                     <div className="header__menu">
                         <div className="header__cart_icon">
                             {/*<i className="ri-shopping-cart-2-line"></i>*/}
-                            <ShoppingCart size="1em"/> <span> {cartItems.length}</span>
+                            <ShoppingCart size="1em"/> {cartItems.length ? <div>{cartItems.length}</div> : <div></div>}
                         </div>
 
                         <div className={`header__burger_menu ${isMenuOpen ? "active" : ""}`} id="burger"
