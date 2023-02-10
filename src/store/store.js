@@ -1,7 +1,6 @@
 import {create} from 'zustand'
 import {persist} from "zustand/middleware"
-import {getAllItems, getItemAvailableSize} from "../api/items/itemsApi.js"
-import {useQuery} from "react-query"
+
 
 export const useStore = create(persist((set, get) => ({
         cartItems: [],
@@ -19,26 +18,31 @@ export const useStore = create(persist((set, get) => ({
             }
         }),
         incItemCount: (itemId, itemSize, availableSizeCount) => set((state) => {
-            const item = state.cartItems.find(({id, size}) => id === itemId && size === itemSize)
-            if (item.itemCount + 1 > availableSizeCount)
-                return state
-
-            item.itemCount++
-            const excludeItems = state.cartItems.filter((cartItem) => cartItem.size !== itemSize || cartItem.id !== itemId)
+            const newArr = state.cartItems.map(item => {
+                if (item.id === itemId && item.size === itemSize && item.itemCount + 1 <= availableSizeCount)
+                    return {
+                        ...item,
+                        itemCount: item.itemCount + 1
+                    }
+                return item
+            })
             return {
-                cartItems: [...excludeItems, item].sort((a, b) => a.id - b.id)
+                cartItems: [...newArr]
             }
         })
 
         ,
         decItemCount: (itemId, itemSize) => set((state) => {
-            const item = state.cartItems.find(({id, size}) => id === itemId && size === itemSize)
-            if (item.itemCount - 1 < 1)
-                return state
-            item.itemCount--
-            const excludeItems = state.cartItems.filter((cartItem) => cartItem.size !== itemSize || cartItem.id !== itemId)
+            const newArr = state.cartItems.map(item => {
+                if (item.id === itemId && item.size === itemSize && item.itemCount - 1 >= 1 )
+                    return {
+                        ...item,
+                        itemCount: item.itemCount - 1
+                    }
+                return item
+            })
             return {
-                cartItems: [...excludeItems, item].sort((a, b) => a.id - b.id)
+                cartItems: [...newArr]
             }
         }),
     }),
