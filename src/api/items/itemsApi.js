@@ -1,4 +1,5 @@
 import apiClient from "../apiClient.js"
+import retrieveItem from "../../components/RetrieveItem/RetrieveItem.jsx"
 
 export const getAllItems = async () => {
     return apiClient.get('items/'   )
@@ -14,4 +15,8 @@ export const getItemAvailableSize = async (itemId, size) => {
             'size': size
         }
     })
+}
+
+export const checkItemsAvailability = async (data) => {
+    return apiClient.post(`items/check_items_availability/`, data)
 }

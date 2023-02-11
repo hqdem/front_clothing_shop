@@ -4,6 +4,7 @@ import CartItem from "./CartItem/CartItem.jsx"
 import {useStore} from "../../store/store.js"
 import {nanoid} from "nanoid"
 import {NumericFormat} from "react-number-format"
+import CartForm from "./CartForm/CartForm.jsx"
 
 
 const Cart = () => {
@@ -29,7 +30,7 @@ const Cart = () => {
                 </div>
 
                 <div className={classes.cart__form}>
-
+                    <CartForm />
                 </div>
 
             </div>

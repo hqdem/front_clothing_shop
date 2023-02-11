@@ -6,7 +6,6 @@
 }
 
 .cart__items {
-
 }
 
 .cart__item {
@@ -80,6 +79,7 @@
 
 .cart__total_price {
     text-align: right;
+    padding: 0 5%;
 }
 
 .cart__total_price span.text {
@@ -87,8 +87,56 @@
 }
 
 
-.cart__form {
+.cart__form form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+    padding: 0 5%;
+}
 
+.cart__form label {
+    font-size: 1.25rem;
+    letter-spacing: 1.5px;
+    font-weight: 300;
+}
+
+.cart__form input {
+    height: 40px;
+    font-size: 1.5rem;
+    font-weight: 300;
+    padding: 2.5%;
+    /*margin-bottom: 5%;*/
+}
+
+.cart__form button {
+    /*min-width: 120px;*/
+    /*margin: 0 auto;*/
+    height: 40px;
+    font-size: 1.5rem;
+    color: #fff;
+    background-color: #000;
+
+    transition: all .3s ease-in-out;
+
+}
+
+.cart__form button:is(:focus, :hover) {
+    background-color: #2d2b2b;
+    border: 2px solid #a53737;
+}
+
+.form__error__message,
+.cart__non_fields_errors {
+    color: red;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 5%;
+}
+
+.loader_spinner {
+    margin-top: 10%;
+    display: grid;
+    place-content: center;
 }
 
 

@@ -53,6 +53,21 @@ export const useStore = create(persist((set, get) => ({
                 totalPrice += itemTotalPrice
             }
             return totalPrice
+        },
+        getCartItemsForOrderApi: () => {
+            return get().cartItems.map(item => ({
+                item_id: item.id,
+                size: item.size,
+                item_count: item.itemCount
+            }))
+        },
+        getCartItemsForItemCheckAvailability: () => {
+            return get().cartItems.map(item => ({
+                item_id: item.id,
+                count: item.itemCount,
+                size: item.size,
+                price: item.price
+            }))
         }
 
     }),
