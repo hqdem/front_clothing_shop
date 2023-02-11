@@ -11,6 +11,7 @@ const RetrieveItem = () => {
 
     const {id} = useParams()
     const [sizeValue, setSizeValue] = useState('')
+    const [errorSize, setErrorSize] = useState(null)
     const addItem = useStore(state => state.addItem)
 
     const {isLoading, isError, data, error} = useQuery({
@@ -33,6 +34,22 @@ const RetrieveItem = () => {
 
     const handleRadioClick = (e) => {
         setSizeValue(e.target.value)
+    }
+
+    const handleBuyButtonClick = () => {
+        if (sizeValue === '') {
+            setErrorSize('Перед тем, как добавить товар в корзину выберете размер!')
+            return
+        }
+        addItem({
+            id: data.data.id,
+            name: data.data.name,
+            size: sizeValue,
+            itemCount: 1,
+            price: price,
+            image:itemImage
+        })
+        setErrorSize(null)
     }
 
 
@@ -72,14 +89,14 @@ const RetrieveItem = () => {
                             })
                         }
                     </div>
-                    <button className={classes.retrieve_text__button} onClick={() => addItem({
-                        id: data.data.id,
-                        name: data.data.name,
-                        size: sizeValue,
-                        itemCount: 1,
-                        price: price,
-                        image:itemImage
-                    })}>Купить
+                    {
+                        errorSize   ?
+                                    <div className={classes.retrieve_item__size_error}>
+                                        {errorSize}
+                                    </div>
+                                    : ''
+                    }
+                    <button className={classes.retrieve_text__button} onClick={handleBuyButtonClick}>Купить
                     </button>
                     {/*</form>*/}
                     <p className={classes.retrieve_text__undertext}>{data.data.description}</p>

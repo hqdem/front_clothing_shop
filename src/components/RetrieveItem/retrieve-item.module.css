@@ -136,6 +136,12 @@
     color: #666;
 }
 
+.retrieve_item__size_error {
+    color: red;
+    font-weight: 300;
+    letter-spacing: 1.5px;
+}
+
 
 
 @media screen and (max-width: 700px) {
@@ -178,5 +184,10 @@
         align-items: center;
         justify-content: center;
         margin-bottom: 5px;
+    }
+
+    .retrieve_item__size_error {
+        margin-top: 1%;
+        margin-bottom: 5%;
     }
 }
