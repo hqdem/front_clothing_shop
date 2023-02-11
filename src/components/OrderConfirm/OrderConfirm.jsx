@@ -18,13 +18,20 @@ const OrderConfirm = () => {
             clearItems()
             localStorage.removeItem('order_id')
             setTimeout(() => navigate('/'), 5000)
-        }
+        },
+        retry: false
     })
 
     if (isLoading)
         return <Loading />
 
     if (isError) {
+        if (error.response.status === 402)
+            return (
+                <div className={classes.order_confirm_error}>
+                    Ошибка! Заказ не оплачен. Если вы оплачивали заказ, свяжитесь со службой поддержки.
+                </div>
+            )
         return (
             <div className={classes.order_confirm_error}>
                 Ошибка! Заказ не найден. Если вы заказывали вещи, свяжитесь со службой поддержки.
