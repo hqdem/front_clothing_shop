@@ -32,9 +32,7 @@ export const useStore = create(persist((set, get) => ({
             return {
                 cartItems: [...newArr]
             }
-        })
-
-        ,
+        }),
         decItemCount: (itemId, itemSize) => set((state) => {
             const newArr = state.cartItems.map(item => {
                 if (item.id === itemId && item.size === itemSize && item.itemCount - 1 >= 1 )
@@ -48,6 +46,15 @@ export const useStore = create(persist((set, get) => ({
                 cartItems: [...newArr]
             }
         }),
+        getTotalPrice: () => {
+            let totalPrice = 0
+            for (let item of get().cartItems) {
+                let itemTotalPrice = item.price * item.itemCount
+                totalPrice += itemTotalPrice
+            }
+            return totalPrice
+        }
+
     }),
     {
         name: 'cartItemsStorage'

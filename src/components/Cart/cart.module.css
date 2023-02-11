@@ -5,6 +5,10 @@
     margin: 0 auto;
 }
 
+.cart__items {
+
+}
+
 .cart__item {
     display: flex;
     align-items: center;
@@ -14,6 +18,10 @@
 
 .cart__item:first-child {
     border-top: 1px solid #000;
+}
+
+.cart__item:last-child {
+    border-bottom: 1px solid #000;
 }
 
 .cart__item__photo img {
@@ -69,6 +77,21 @@
 .count_number {
 
 }
+
+.cart__total_price {
+    text-align: right;
+}
+
+.cart__total_price span.text {
+    font-weight: 500;
+}
+
+
+.cart__form {
+
+}
+
+
 
 @media screen and (max-width: 510px) {
     .cart {
