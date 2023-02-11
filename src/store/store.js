@@ -17,6 +17,11 @@ export const useStore = create(persist((set, get) => ({
                 cartItems: [...state.cartItems.filter((cartItem) => cartItem.size !== itemSize || cartItem.id !== itemId)]
             }
         }),
+        clearItems: () => set((state) => {
+           return {
+               cartItems: []
+           }
+        }),
         incItemCount: (itemId, itemSize, availableSizeCount) => set((state) => {
             const newArr = state.cartItems.map(item => {
                 if (item.id === itemId && item.size === itemSize)

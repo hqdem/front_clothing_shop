@@ -11,3 +11,7 @@ export const getRetrieveOrder = async (orderId) => {
 export const createOrder = async (data) => {
     return apiClient.post('orders/', {...data})
 }
+
+export const confirmOrderPayment = async (orderId) => {
+    return apiClient.post(`orders/${orderId}/confirm_payment/`)
+}

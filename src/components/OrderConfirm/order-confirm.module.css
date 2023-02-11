@@ -1,0 +1,26 @@
+.order_confirm_text {
+    margin: auto 0;
+    display: grid;
+    place-content: center;
+    color: green;
+    font-size: 2rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+.order_confirm_error {
+    margin: auto 0;
+    display: grid;
+    place-content: center;
+    color: red;
+    font-size: 2rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+@media screen and (max-width: 450px) {
+    .order_confirm_text {
+        margin-top: 25%;
+    }
+
+}
