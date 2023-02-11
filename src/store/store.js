@@ -19,11 +19,14 @@ export const useStore = create(persist((set, get) => ({
         }),
         incItemCount: (itemId, itemSize, availableSizeCount) => set((state) => {
             const newArr = state.cartItems.map(item => {
-                if (item.id === itemId && item.size === itemSize && item.itemCount + 1 <= availableSizeCount)
-                    return {
-                        ...item,
-                        itemCount: item.itemCount + 1
-                    }
+                if (item.id === itemId && item.size === itemSize)
+                    if (item.itemCount + 1 <= availableSizeCount)
+                        return {
+                            ...item,
+                            itemCount: item.itemCount + 1
+                        }
+                    else alert('Вы достигли максимально доступного количества данного товара.')
+                
                 return item
             })
             return {
