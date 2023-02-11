@@ -150,7 +150,7 @@
 
 
 
-@media screen and (max-width: 510px) {
+@media screen and (max-width: 550px) {
     .cart {
         margin-top: 15%;
     }
@@ -169,6 +169,11 @@
 
     .cart__item__desc {
         margin-bottom: 10px;
+    }
+
+    .cart__empty_text {
+        margin-top: 20%;
+        font-size: 2rem;
     }
 
 
