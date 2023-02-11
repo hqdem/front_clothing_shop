@@ -7,8 +7,6 @@ const Item = ({item}) => {
         itemImage = item.item_images[0].image_url
     }
 
-
-
     return (
         <div className="main__item_card">
             <div className="item__photo">
@@ -16,7 +14,7 @@ const Item = ({item}) => {
             </div>
 
             <div className="item__title">
-                {item.name}
+                { item.is_available ? item.name : <span>{item.name} (SOLD OUT)</span>}
             </div>
 
             <div className="item__desc">

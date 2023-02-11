@@ -187,6 +187,10 @@ body {
   margin-bottom: 10px;
 }
 
+.item__title span {
+  color: red;
+}
+
 .item__desc {
   font-weight: 300;
   margin-bottom: 10px;
