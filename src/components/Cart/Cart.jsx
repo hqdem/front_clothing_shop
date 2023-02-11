@@ -13,6 +13,13 @@ const Cart = () => {
 
     let totalPrice = getTotalPrice()
 
+    if (!cartItems.length)
+        return (
+            <div className={classes.cart__empty_text}>
+                Корзина пуста
+            </div>
+        )
+
     return (
         <>
             <div className={classes.cart}>
