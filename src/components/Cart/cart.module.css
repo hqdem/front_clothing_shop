@@ -42,6 +42,8 @@
     font-size: 1rem;
     font-weight: 700;
     margin-bottom: 5px;
+    width: 200px;
+    /*max-width: 200px;*/
 }
 
 .cart__item__size {
@@ -175,5 +177,10 @@
     .cart__empty_text {
         margin-top: 20%;
         font-size: 2rem;
+    }
+
+    .cart__item__name {
+        width: auto;
+        max-width: none;
     }
 }
