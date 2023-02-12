@@ -4,6 +4,18 @@ import {persist} from "zustand/middleware"
 
 export const useStore = create(persist((set, get) => ({
         cartItems: [],
+        isMenuOpen: false,
+
+        setIsMenuOpen: () => set((state) => {
+            return {
+                isMenuOpen: !state.isMenuOpen
+            }
+        }),
+        closeMenu: () => set((state) => {
+            return {
+                isMenuOpen: false
+            }
+        }),
         addItem: (item) => set((state) => {
             const findItem = state.cartItems.find(({id, size}) => id === item.id && size === item.size)
             if (findItem)

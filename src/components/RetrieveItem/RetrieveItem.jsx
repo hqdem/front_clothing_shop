@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import {useQuery} from "react-query"
 import {getRetrieveItem} from "../../api/items/itemsApi.js"
 import Loading from "../Loading/Loading.jsx"
@@ -15,12 +15,18 @@ const RetrieveItem = () => {
     const {id} = useParams()
     const [sizeValue, setSizeValue] = useState('')
     const [errorSize, setErrorSize] = useState(null)
+
     const addItem = useStore(state => state.addItem)
+    const closeMenu = useStore(state => state.closeMenu)
 
     const {isLoading, isError, data, error} = useQuery({
         queryKey: ['item_retrieve', id],
         queryFn: () => getRetrieveItem(id)
     })
+
+    useEffect(() => {
+        closeMenu()
+    }, [])
 
     if (isLoading)
         return <Loading/>

@@ -1,23 +1,29 @@
 import React from 'react'
-import {useState} from "react"
 import {Link} from "react-router-dom"
 import ShoppingCart from 'remixicon-react/ShoppingCart2LineIcon'
 import {useStore} from "../../store/store.js"
 
 const Header = () => {
 
-    const [isMenuOpen, setIsMenuOpen] = useState(false)
+    // const [isMenuOpen, setIsMenuOpen] = useState(false)
+    const isMenuOpen = useStore(state => state.isMenuOpen)
+    const setIsMenuOpen = useStore(state => state.setIsMenuOpen)
     const cartItems = useStore(state => state.cartItems)
+
+    const closeMenu = useStore(state => state.closeMenu)
 
     const handleBurgerBtnClick = () => {
         setIsMenuOpen((prevValue) => !prevValue)
+    }
+    const handleCloseMenu = () => {
+        closeMenu()
     }
 
     return (
         <header className="header animate__animated animate__fadeInDown">
             <div className="container">
                 <div className="header__content">
-                    <div className="header__logo">
+                    <div className="header__logo" onClick={handleCloseMenu}>
                         <Link to="/">AUTOMATIC VERTICAL</Link>
                     </div>
 
@@ -41,10 +47,10 @@ const Header = () => {
                 <div className="container">
                     <div className="header__menu_items">
                         <ul>
-                            <li><Link to="/">МАГАЗИН</Link></li>
-                            <li><Link to="/about">О БРЕНДЕ</Link></li>
-                            <li><Link to="/gallery">ГАЛЕРЕЯ</Link></li>
-                            <li><Link to="/info">ИНФОРМАЦИЯ</Link></li>
+                            <li onClick={handleCloseMenu}><Link to="/">МАГАЗИН</Link></li>
+                            <li onClick={handleCloseMenu}><Link to="/about">О БРЕНДЕ</Link></li>
+                            <li onClick={handleCloseMenu}><Link to="/gallery">ГАЛЕРЕЯ</Link></li>
+                            <li onClick={handleCloseMenu}><Link to="/info">ИНФОРМАЦИЯ</Link></li>
                         </ul>
                     </div>
 

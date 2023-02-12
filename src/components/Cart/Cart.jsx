@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import classes from "./cart.module.css"
 import CartItem from "./CartItem/CartItem.jsx"
 import {useStore} from "../../store/store.js"
@@ -10,8 +10,13 @@ import CartForm from "./CartForm/CartForm.jsx"
 const Cart = () => {
     const cartItems = useStore(state => state.cartItems)
     const getTotalPrice = useStore(state => state.getTotalPrice)
+    const closeMenu = useStore(state => state.closeMenu)
 
     let totalPrice = getTotalPrice()
+
+    useEffect(() => {
+        closeMenu()
+    }, [])
 
     if (!cartItems.length)
         return (
