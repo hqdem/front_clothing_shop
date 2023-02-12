@@ -6,6 +6,9 @@ import defaultImage from "../../assets/img/default_image.png"
 import {useParams} from "react-router-dom"
 import classes from "./retrieve-item.module.css"
 import {useStore} from "../../store/store.js"
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
+
 
 const RetrieveItem = () => {
 
@@ -62,7 +65,14 @@ const RetrieveItem = () => {
             </div>
             <div className={classes.retrieve_item__content}>
                 <div className={classes.retrieve_item__content__photo}>
-                    <img src={itemImage} alt=""/>
+                    {/*<img src={itemImage} alt=""/>*/}
+                    {
+                        data.data.item_images.length !== 0 ?
+                            <Carousel >
+                                {data.data.item_images.map(item => <div key={item.image_url}><img src={item.image_url} alt=""/></div>)}
+                            </Carousel> :
+                            <img src={itemImage} alt=""/>
+                    }
                 </div>
 
                 <div className={classes.retrieve_item__content__retrieve_text}>

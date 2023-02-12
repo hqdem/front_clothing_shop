@@ -76,7 +76,7 @@ const CartForm = () => {
 
     return (
         <form>
-            {availabilityErrors !== []
+            {availabilityErrors.length !== 0
                 ? <div className={classes.cart__non_fields_errors}>
                     {availabilityErrors.map(avErr => <div key={nanoid()}>{avErr.detail}</div>)}
                 </div>
