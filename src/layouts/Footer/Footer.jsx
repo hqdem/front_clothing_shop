@@ -17,8 +17,8 @@ const Footer = () => {
                     </div>
 
                     <div className="footer__socials">
-                        <a href="#"><InstImage /></a>
-                        <a href="#"><TelegramImage /></a>
+                        <a href="https://www.instagram.com/" target="_blank"><InstImage /></a>
+                        <a href="https://web.telegram.org/" target="_blank"><TelegramImage /></a>
                     </div>
                 </div>
             </div>

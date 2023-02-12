@@ -46,6 +46,11 @@ body {
   font-weight: 600;
 }
 
+.header__logo span {
+  background-color: #3f6f96;
+  color: #fff;
+}
+
 .header__logo a {
   color: #000;
   text-decoration: none;

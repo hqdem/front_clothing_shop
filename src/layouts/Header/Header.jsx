@@ -24,7 +24,7 @@ const Header = () => {
             <div className="container">
                 <div className="header__content">
                     <div className="header__logo" onClick={handleCloseMenu}>
-                        <Link to="/">AUTOMATIC VERTICAL</Link>
+                        <Link to="/">AUTOMATIC <span>VERTICAL</span></Link>
                     </div>
 
                     <div className="header__menu">
