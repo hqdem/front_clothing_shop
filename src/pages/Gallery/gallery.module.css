@@ -1,0 +1,23 @@
+.gallery_photos {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.gallery_photo img{
+    max-width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+    .gallery_photos {
+        margin-top: 10%;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+@media screen and (max-width: 465px) {
+    .gallery_photos {
+        margin-top: 15%;
+        grid-template-columns: 1fr;
+    }
+}

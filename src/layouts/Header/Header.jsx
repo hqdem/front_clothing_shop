@@ -45,7 +45,6 @@ const Header = () => {
                             <li><Link to="/about">О БРЕНДЕ</Link></li>
                             <li><Link to="/gallery">ГАЛЕРЕЯ</Link></li>
                             <li><Link to="/info">ИНФОРМАЦИЯ</Link></li>
-                            <li><Link to="/studio">AUTOMATIC STUDIO</Link></li>
                         </ul>
                     </div>
 

@@ -1,0 +1,26 @@
+.info_text {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.acc_header {
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.acc_text {
+    font-weight: 300;
+    letter-spacing: 1.5px;
+}
+
+@media screen and (max-width: 754px) {
+    .info_text {
+        margin-top: 5%;
+    }
+}
+
+@media screen and (max-width: 466px) {
+    .info_text {
+        margin-top: 22.5%;
+    }
+}
