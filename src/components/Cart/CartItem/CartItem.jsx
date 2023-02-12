@@ -5,8 +5,8 @@ import IndeterminateCircleLineIcon from "remixicon-react/IndeterminateCircleLine
 import CloseCircleLineIcon from "remixicon-react/CloseCircleLineIcon"
 import {NumericFormat} from "react-number-format"
 import {useStore} from "../../../store/store.js"
-import {useQuery, useQueryClient} from "react-query"
-import {getAllItems, getItemAvailableSize} from "../../../api/items/itemsApi.js"
+import {useQueryClient} from "react-query"
+import {getItemAvailableSize} from "../../../api/items/itemsApi.js"
 
 const CartItem = ({item}) => {
 
