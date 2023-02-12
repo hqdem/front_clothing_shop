@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import Item from "./Item/Item.jsx"
 import Loading from "../Loading/Loading.jsx"
 import {useQuery} from "react-query"

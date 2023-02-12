@@ -5,7 +5,6 @@ import IndeterminateCircleLineIcon from "remixicon-react/IndeterminateCircleLine
 import CloseCircleLineIcon from "remixicon-react/CloseCircleLineIcon"
 import {NumericFormat} from "react-number-format"
 import {useStore} from "../../../store/store.js"
-import {useQueryClient} from "react-query"
 import {getItemAvailableSize} from "../../../api/items/itemsApi.js"
 
 const CartItem = ({item}) => {
@@ -13,16 +12,6 @@ const CartItem = ({item}) => {
     const removeItem = useStore(state => state.removeItem)
     const incItemCount = useStore(state => state.incItemCount)
     const decItemCount = useStore(state => state.decItemCount)
-    const queryClient = useQueryClient()
-
-    // const handleIncButton = (itemId, itemSize) => {
-    //     const {isLoading, isError, data, error} = useQuery({
-    //         queryKey: ['availale-item-size'],
-    //         queryFn: getItemAvailableSize(itemId, itemSize)
-    //     })
-    //
-    //     console.log(data)
-    // }
 
     return (
         <div className={classes.cart__item}>

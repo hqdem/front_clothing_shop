@@ -1,5 +1,4 @@
 import apiClient from "../apiClient.js"
-import retrieveItem from "../../components/RetrieveItem/RetrieveItem.jsx"
 
 export const getAllItems = async () => {
     return apiClient.get('items/'   )

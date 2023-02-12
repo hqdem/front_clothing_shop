@@ -1,9 +1,9 @@
-import React, {useEffect, useState} from 'react'
+import React from 'react'
 import classes from "./order-confirm.module.css"
 import {useQuery} from "react-query"
 import {confirmOrderPayment} from "../../api/orders/ordersApi.js"
 import Loading from "../Loading/Loading.jsx"
-import {redirect, useNavigate} from "react-router-dom"
+import {useNavigate} from "react-router-dom"
 import {useStore} from "../../store/store"
 
 
