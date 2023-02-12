@@ -63,6 +63,11 @@
     color: #474747;
 }
 
+.retrieve_text__price span {
+    font-weight: 300;
+    text-decoration: line-through;
+}
+
 .retrieve_text__button {
     background-color: #474747;
     color: #fff;

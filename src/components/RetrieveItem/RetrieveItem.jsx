@@ -6,7 +6,7 @@ import defaultImage from "../../assets/img/default_image.png"
 import {useParams} from "react-router-dom"
 import classes from "./retrieve-item.module.css"
 import {useStore} from "../../store/store.js"
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 
 
@@ -49,6 +49,7 @@ const RetrieveItem = () => {
             name: data.data.name,
             size: sizeValue,
             itemCount: 1,
+            basePrice: data.data.price,
             price: price,
             image:itemImage
         })
@@ -77,7 +78,10 @@ const RetrieveItem = () => {
 
                 <div className={classes.retrieve_item__content__retrieve_text}>
                     <h1 className={classes.retrieve_text__header}>{data.data.name}</h1>
-                    <p className={classes.retrieve_text__price}>{price} ₽</p>
+                    { data.data.sale_price ?
+                        <p className={classes.retrieve_text__price}><span>{data.data.price} ₽</span> {price} ₽</p> :
+                        <p className={classes.retrieve_text__price}>{price} ₽</p>
+                    }
                     {/*<form className={classes.retrieve_item__form} action="">*/}
                     <div className={classes.form_radio_group}>
                         {

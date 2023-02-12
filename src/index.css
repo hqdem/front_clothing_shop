@@ -200,6 +200,11 @@ body {
   font-weight: 500;
 }
 
+.item__price span {
+  font-weight: 300;
+  text-decoration: line-through;
+}
+
 /* FOOTER */
 .footer {
   width: 100%;

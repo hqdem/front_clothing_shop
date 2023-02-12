@@ -20,10 +20,15 @@ const Item = ({item}) => {
             <div className="item__desc">
                 {item.description}
             </div>
-
-            <div className="item__price">
-                {item.price} ₽
-            </div>
+            {
+                item.sale_price ?
+                    <div className="item__price">
+                        <span>{item.price} ₽</span> {item.sale_price} ₽
+                    </div> :
+                    <div className="item__price">
+                        {item.price} ₽
+                    </div>
+            }
         </div>
     )
 }
