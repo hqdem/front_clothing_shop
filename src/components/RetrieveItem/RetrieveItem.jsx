@@ -41,7 +41,7 @@ const RetrieveItem = () => {
 
     const handleBuyButtonClick = () => {
         if (sizeValue === '') {
-            setErrorSize('Перед тем, как добавить товар в корзину выберете размер!')
+            setErrorSize('Перед тем, как добавить товар в корзину, выберите размер!')
             return
         }
         addItem({
